@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: ms-api-validacion
+  datasource:
+    url: jdbc:oracle:thin:@localhost:1521/XEPDB1
+    username: validacion
+    password: ${ORACLE_PASSWORD:changeit}
+  jpa:
+    hibernate:
+      ddl-auto: none
+    open-in-view: false
+    properties:
+      hibernate.dialect: org.hibernate.dialect.OracleDialect
+  data:
+    redis:
+      host: localhost
+      port: 6379
+      timeout: 200ms
+
+server:
+  port: 8081
+
+recaudo:
+  base-url: http://localhost:8082
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
